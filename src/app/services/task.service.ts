@@ -16,4 +16,9 @@ export class TaskService {
   getTasks(listId) {
     return this.sr.getAIA('/lists/' + listId + '/tasks');
   }
+  addTask(listId, title) {
+    console.log('/lists/' + listId + '/tasks', { title });
+
+    return this.sr.postAIA('/lists/' + listId + '/tasks', { title });
+  }
 }

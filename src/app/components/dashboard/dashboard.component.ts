@@ -10,7 +10,7 @@ import { ActivatedRoute } from "@angular/router";
 export class DashboardComponent implements OnInit {
   lists: any[];
   tasks: any[];
-  listId;
+  listId = '';
 
 
   constructor(private ts: TaskService, private plusCourt: ActivatedRoute) { }

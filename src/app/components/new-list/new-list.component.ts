@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TaskService } from "../../services/task.service";
+import { RouterLink, Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-new-list',
@@ -8,7 +10,8 @@ import { TaskService } from "../../services/task.service";
 })
 export class NewListComponent implements OnInit {
 
-  constructor(private ts: TaskService) { }
+  forwardLink;
+  constructor(private ts: TaskService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -17,6 +20,8 @@ export class NewListComponent implements OnInit {
     console.log(title);
     this.ts.createList(title).subscribe((reponse: any) => {
       console.log(reponse);
+      this.forwardLink = reponse._id;
+      this.router.navigate(['./dashboard/' + this.forwardLink]);
     });
   }
 

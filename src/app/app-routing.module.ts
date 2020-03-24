@@ -8,7 +8,7 @@ import { NewTaskComponent } from './components/new-task/new-task.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'dashboard',
+    redirectTo: 'dashboard/5e79db4b52e8f9346410261f',
     pathMatch: 'full'
   },
   {
@@ -24,7 +24,7 @@ const routes: Routes = [
     component: NewListComponent
   },
   {
-    path: 'new-task',
+    path: 'new-task/:listId',
     component: NewTaskComponent
   }
 ];
