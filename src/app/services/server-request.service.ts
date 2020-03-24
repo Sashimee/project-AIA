@@ -10,19 +10,19 @@ export class ServerRequestService {
   baseUrl = 'localhost:3000'
   constructor(private http: HttpClient) { }
 
-  get(path: any) {
+  getAIA(path: any) {
     return this.http.get(this.baseUrl + path);
   }
 
-  post(path: any, data: any) {
+  postAIA(path: any, data: any) {
     return this.http.post(this.baseUrl + path, data);
   }
 
-  patch(path: any, data: any) {
+  patchAIA(path: any, data: any) {
     return this.http.patch(this.baseUrl + path, data);
   }
 
-  delete(path: any) {
+  deleteAIA(path: any) {
     return this.http.delete(this.baseUrl + path);
   }
 }
