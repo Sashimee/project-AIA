@@ -1,1 +1,39 @@
-/* You can add global styles to this file, and also import other style files */
+// This is where we put global styles and change variables values
+
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700|Nunito:400,700")
+@import "../node_modules/bulma/bulma.sass"
+
+$turquoise: #44ddd0
+$green: #27d7a1
+
+$light-green: #45f69e
+$light: #f8f8f8
+$dark-green: rgb(0, 100, 80)
+
+// Update Bula global variables
+$family-sans-serif: "Nunito", sans-serif
+$primary: $green
+
+$link: $light-green
+
+// Update some Bulma component variables
+
+$control-border-width: 2px
+$input-border-color: transparent
+$input-shadow: none
+
+// Set custom global styles (Will be applied to the whole app)
+
+html
+    background: linear-gradient(to right top, $turquoise, $green)
+
+html,
+body
+    height: 100%
+
+.centered-content
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 100%
+    height: 100%

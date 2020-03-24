@@ -6,8 +6,8 @@ import { HttpClient } from "@angular/common/http";
 })
 export class ServerRequestService {
   path = '';
-  data = [];
-  baseUrl = 'localhost:3000'
+  data = {};
+  baseUrl = 'http://localhost:3000'
   constructor(private http: HttpClient) { }
 
   getAIA(path: any) {
