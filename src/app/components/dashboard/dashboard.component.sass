@@ -62,11 +62,13 @@
     padding: 15px 20px
     border-radius: 5px
     margin-top: 10px
+    display: flex
+    justify-content: space-between
     &:not(.complete) 
         cursor: pointer
         transition: box-shadow 0.2s ease, transform 0.2s ease
-        &:active 
-            transform: scale(0.95)
+        // &:active 
+        //     transform: scale(0.95) dommage mais ça fait buguer le delete
         
         &:hover 
             box-shadow: 0 0 0 4px #eeeeee
@@ -75,8 +77,11 @@
     &.complete 
         text-decoration: line-through
         opacity: 70%
+    p 
+        padding-right: 15px
     
-
+.delete
+    margin: auto 0
 
 .circle-add-button 
     position: absolute

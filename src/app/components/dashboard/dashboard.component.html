@@ -22,6 +22,7 @@
             <!-- Task Elements -->
             <div class="task" *ngFor="let task of tasks">
                 <p>{{task.title}}</p>
+                <a class="delete" (click)="deleteThisTask(task._id, task._listId)"></a>
             </div>
             <button class="circle-add-button button is-primary" [routerLink]="['/new-task', listId]">
           <img src="../../../assets/plus-sign.svg" />
