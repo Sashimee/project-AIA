@@ -8,7 +8,7 @@ export class TaskService {
 
   constructor(private sr: ServerRequestService) { }
   createList(title) {
-    return this.sr.postAIA('/lists/', title);
+    return this.sr.postAIA('/lists', { title });
   }
   getLists() {
     return this.sr.getAIA('/lists');

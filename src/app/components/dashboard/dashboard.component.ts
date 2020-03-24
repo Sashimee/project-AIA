@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { TaskService } from "../../services/task.service";
-import { HttpClient } from "@angular/common/http";
 import { ActivatedRoute } from "@angular/router";
 
 @Component({
@@ -18,6 +17,7 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     //this.listId = this.plusCourt.snapshot.paramMap.get('listId');
+    //ça prend un shapshot à un instant t et comme on ne rafraîchit pas réellement tout le component c'est pas bon ...
     this.plusCourt.paramMap.subscribe(params => {
       this.listId = params.get('listId');
       this.ts.getTasks(this.listId).subscribe((response: any) => {
