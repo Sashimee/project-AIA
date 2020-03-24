@@ -11,20 +11,25 @@ import { ActivatedRoute } from "@angular/router";
 export class DashboardComponent implements OnInit {
   lists: any[];
   tasks: any[];
+  listId;
+
+
   constructor(private ts: TaskService, private plusCourt: ActivatedRoute) { }
 
   ngOnInit(): void {
+    //this.listId = this.plusCourt.snapshot.paramMap.get('listId');
+    this.plusCourt.paramMap.subscribe(params => {
+      this.listId = params.get('listId');
+      this.ts.getTasks(this.listId).subscribe((response: any) => {
+        console.log(response);
+        this.tasks = response;
+      })
+    });
+
     this.ts.getLists().subscribe((response: any) => {
       console.log(response);
       this.lists = response;
     })
-    this.ts.getTasks('5e79db4b52e8f9346410261f').subscribe((response: any) => {
-      console.log(response);
-      this.tasks = response;
-    })
-  }
-  listClickHandle() {
-
   }
 
 }

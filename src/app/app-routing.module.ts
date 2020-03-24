@@ -16,6 +16,10 @@ const routes: Routes = [
     component: DashboardComponent
   },
   {
+    path: 'dashboard/:listId',
+    component: DashboardComponent
+  },
+  {
     path: 'new-list',
     component: NewListComponent
   },
